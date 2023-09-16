@@ -17,13 +17,15 @@
       </div>
 
 
-      <div class="navbarsearch">
-        <form action="">
-          <input type="text" name="search" id="search" placeholder="Search">
-          <button type="submit">Search</button>
-        </form>
-      </div>
+      <form action="search.php" method="post" style="width : 100%; display :flex ; justify-content : center">
 
+        <div class="navbarsearch">
+          <form action="">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <button type="submit" name='submit'>Search</button>
+          </form>
+        </div>
+      </form>
 
 
       <div class="navbarLogin">
@@ -38,10 +40,10 @@
     <div class="navbarLinks">
       <div class="Links">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Buy</a></li>
-          <li><a href="">Sell</a></li>
-          <li><a href="">Cart</a></li>
+          <li><a href="landingPage.php">Home</a></li>
+          <li><a href="buy.php">Buy</a></li>
+          <li><a href="../html/sell.html">Sell</a></li>
+          <li><a href="cartPage.php">Cart</a></li>
         </ul>
       </div>
     </div>
@@ -75,6 +77,7 @@
       </div>
     </div>
   </div>
+
 
 
 
@@ -133,7 +136,9 @@
           </div>
 
           <div class="abstract">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid nulla, veritatis iusto itaque reiciendis mollitia nostrum tempora non corporis natus odio quasi praesentium autem nihil magni maxime porro impedit!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid nulla, veritatis iusto
+            itaque reiciendis mollitia nostrum tempora non corporis natus odio quasi praesentium autem nihil
+            magni maxime porro impedit!
           </div>
         </div>
       </div>
@@ -154,7 +159,9 @@
           </div>
 
           <div class="abstract">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid nulla, veritatis iusto itaque reiciendis mollitia nostrum tempora non corporis natus odio quasi praesentium autem nihil magni maxime porro impedit!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid nulla, veritatis iusto
+            itaque reiciendis mollitia nostrum tempora non corporis natus odio quasi praesentium autem nihil
+            magni maxime porro impedit!
           </div>
         </div>
       </div>
@@ -175,7 +182,9 @@
           </div>
 
           <div class="abstract">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid nulla, veritatis iusto itaque reiciendis mollitia nostrum tempora non corporis natus odio quasi praesentium autem nihil magni maxime porro impedit!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid nulla, veritatis iusto
+            itaque reiciendis mollitia nostrum tempora non corporis natus odio quasi praesentium autem nihil
+            magni maxime porro impedit!
           </div>
         </div>
 
