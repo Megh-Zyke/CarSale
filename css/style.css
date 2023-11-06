@@ -1,87 +1,96 @@
+@keyframes appear{
+  0%{
+    transform: scale(0);
+  }
+
+  100%{
+  
+    transform: scale(1);
+  }
+}
+
+@keyframes slide{
+  0%{
+    margin-top: 200%;
+  }
+
+  100%{
+  
+    margin-top: 0%;
+  }
+}
+
+@keyframes slideLeft{
+  0%{
+    margin-left: -200%;
+  }
+
+  100%{
+  
+    margin-left: 0%;
+  }
+}
+
 * {
   margin: 0;
+font-family: 'Gabarito', cursive;
 }
 
-.navbarHeading {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10%;
-}
-.navbartitle {
-  margin-top: 35px;
-}
-.navbarLogin {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-.navbarLinks {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10%;
-}
-
-.cars {
-  border: #000 2px solid;
-  margin: 5% 0;
-}
-
-.navbarsearch {
-  width: 50%;
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-#search {
-  width: 80%;
-  padding: 2%;
-  font-size: 1.2rem;
-}
-.Links {
+.Navbar{
+  margin: 0 ; 
   width: 100%;
+  padding: 0;
+  font-size: 1rem;
+
+  top: 0;
+  z-index: 1;
+  
 }
 
-.Links ul {
+.navbarHeading{
   display: flex;
   justify-content: space-between;
+  margin: 0 20%;
+  padding: 1% 0;
+}
+
+
+.Links ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  gap:30px;
+}
+
+.Links ul li{
   list-style: none;
-  margin: 0 40%;
-}
-
-.Links ul li a {
-  text-decoration: none;
-
   font-size: 1.2rem;
-  font-weight: bold;
+  text-decoration: none;
 }
 
-.mainPage {
-  margin: 130px 2.5%;
+.Links ul li a , navbarLogin{
+
+  text-decoration: none;
 }
-.landingPageWallpaper {
+
+.landingPageWallpaper{
+  margin-top: -5%;
   width: 100%;
-  height: 600px;
-  background-image: url("../image/selling page.jpg");
+  height: 800px;
+  background-image: url("../image/rodan-can-6cqJPeTIuls-unsplash.jpg");
   background-size: cover;
   background-position: center 70%;
   background-repeat: no-repeat;
 }
 
-.searchBox {
+.searchBox{
   width: 20%;
-  height: 300px;
-  background-color: #f5f5f5;
-  position: relative;
-  top: 100px;
-  left: 30px;
+  background: #fff;
   padding: 2.5%;
+  margin : 5%;
+  position: relative;
+  top: 20%;
 }
 
 .searchBox select,
@@ -133,6 +142,17 @@
   object-fit: cover;
 }
 
+.reviews{
+  padding:1%;
+  transition: ease-in-out .5s;
+}
+
+.reviews:hover{
+  transform: scale(1.09);
+  background: #80b6fd;
+  border-radius: 15px;
+
+}
 .Reviews {
   width: 200px;
 }
@@ -159,7 +179,6 @@
   background-repeat: no-repeat;
   object-fit: cover;
   width: 100%;
-  margin-top: 130px;
 }
 .salesPage {
   width: 30%;
@@ -183,75 +202,37 @@
   margin-bottom: 10%;
 }
 
+
+
 /* navbar */
-.Navbar {
-  width: 100%;
-  padding-bottom: 1%;
-  background-color: #f2f2f2;
-  color: #000;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  border: 2px solid #000;
-}
+
 
 /* Buy Page */
 
-.buyingPage {
-  margin-top: 130px;
-}
 
-.img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-}
-
-.carImage {
-  overflow: hidden;
-  width: 300px;
-  height: 200px;
-}
-.img:hover {
-  transform: scale(1.02);
-}
-
-.Buy {
-  margin: 0 5%;
-  margin-top: 10%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.cars {
-  padding: 1%;
-  width: 300px;
-}
-.details {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-}
-
-.details li {
-  list-style: none;
-}
 
 /* car information */
 
 .carInformation {
   display: flex;
-  margin-top: 130px;
+  margin-top: 50px;
 
   justify-content: center;
+}
+
+
+.CarImg{
+  transition: ease-in-out .5s;
+}
+.CarImg:hover {
+  transform: scale(1.1);
 }
 
 .CarImage {
   height: 400px;
   width: 500px;
   overflow: hidden;
+  animation: appear ease-in-out .75s;
 }
 
 .CarImg {
@@ -261,18 +242,25 @@
 }
 
 .CarDetails {
-  text-align: center;
-}
-
-.CarDetails ul li {
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: start;
+padding-top: 100px;
 }
 
 .CarInfo {
   width: 300px;
+}
+
+.carName{
+  display: flex;
+  justify-content: space-between;
+}
+
+.carName span{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.carName ul{
+  list-style: none;
+  padding: 0;
 }
 
 .inner {
@@ -304,19 +292,12 @@
 }
 
 .carInfo {
-  border: #000 2px solid;
+
   text-align: center;
   padding: 2%;
 }
 
-.CarDetails {
-  margin-left: 20%;
-}
 
-.CarPrice {
-  border: #000 2px solid;
-  padding: 10% 5%;
-}
 
 .SubmitBtn {
   font-size: 1.2rem;
@@ -325,4 +306,190 @@
   color: #fff;
   border: #fff 2px solid;
   padding: 2% 5%;
+}
+
+
+
+
+
+
+/*  New Selling Modules */
+.modules{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2.5% 35%;
+}
+
+.carSales{
+  width: 100%;
+  padding: 2%;
+  font-size: 1.5rem;
+
+  background-color: #fff;
+}
+  
+.carSales input {
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 2% 0;
+  border-color: #b2b2b2;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.carSales select{
+  width: 75%;
+  font-size: 1.5rem;
+  margin: 2% 0;
+  border-color: #b2b2b2;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.carSales input .inputFile{
+  border-radius: 0px;
+}
+
+.submitBtn{
+  width: 50%;
+  margin: 2% 25%;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  background-color: blue;
+  color: #fff;
+  border: #fff 2px solid;
+  padding: 2% 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Trials */
+.mainPage{
+  overflow-x: hidden;
+}
+.block{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 65%;
+  height: 750px;
+  width: 35%;
+  background-color: #80b6fd;
+  z-index: -3;
+}
+
+.homePageImage{
+  position: relative;
+  width: 55%;
+  height: 55%;
+  left: 42.5%;
+  margin-top: 5%;
+  animation: slideLeft ease-in-out 1.5s;
+}
+
+.LandingPageHeading{
+  font-size: 2.5rem;
+}
+.landingPage{
+  position: absolute;
+  top: 15%;
+  width: 50%;
+  margin: 4%;
+}
+
+.carModel , .carBodyType{
+  margin-top: 5%;
+  margin-right: 5%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px;
+}
+.landingPageButton{
+  margin-top: 5%;
+  margin-left: -2%;
+  font-size: 1rem;
+
+  padding: 5px;
+  border-radius: 20px;
+  background-color: blue;
+  color: #fff;
+  padding: 1.5% 5%;
+}
+
+.btnClass{
+  margin-left:30%;
+}
+
+
+
+.car-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.car-card {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  border-radius: 10px;
+  perspective: 1000px; /* This gives the 3D effect */
+}
+
+.car-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.car-card:hover .car-card-inner {
+  transform: rotateY(180deg);
+}
+
+.car-image, .car-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.car-info {
+  padding-top: 15%;
+  background:#80b6fd;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.carsCard{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 5%;
+}
+
+
+.car-info ul{
+  list-style: none;
+  padding: 0;
 }

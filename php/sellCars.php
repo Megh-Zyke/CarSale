@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  
+  <div class="Navbar">
+    
+    <div class="navbarHeading">
+      <div class="navbartitle">
+        <h1 class="title"> WheelZ4U </h1>
+      </div>
+
+      <div class="Links">
+        <ul>
+          <li><a href="LandingPage.php">Home</a></li>
+          <li><a href="buy.php">Buy</a></li>
+          <li><a href="sellCars.php">Sell</a></li>
+          <li><a href="cartPage.php">Cart</a></li>
+        </ul>
+      </div>
+       
+
+      <div class="navbarLogin">
+        <a href="">Login/Signup</a>
+      </div>
+
+    </div>
+  </div>
+
+    <form action="sell.php" method="post" enctype="multipart/form-data">
+      <div class="Sale">
+        <div class="salesPage">
+          <h1 class="salesHeading">Sell Your Vehicle</h1>
+          <div class="inputs">
+            <label for="carRegisteration">Vehicle Registeration</label>
+            <input type="text" class="carRegisteration" placeholder="ST-XX-XX-XXXX" name="carRegisteration">
+          </div>
+          <div class="carDetails">
+            <div id="textlabels">
+              <label for="carImage">Car Image</label>
+
+              <input type="file" class="carImage" name="image">
+
+            </div>
+
+
+            <div id="textlabels">
+              <label for="carBrand">Car Brand</label>
+              <input type="text" class="carBrandName" name="carBrandName">
+
+            </div>
+
+            <div id="textlabels">
+              <label for="carModel">Car Model</label>
+              <input type="text" class="carModelName" name="carModelName">
+            </div>
+
+            <div id="textlabels">
+              <label for="CarYear">Manufacturing Year</label>
+              <input type="text" class="carYear" name="carYear">
+            </div>
+
+            <div id="textlabels">
+              <label for="carKM">Kilometers Travelled</label>
+              <input type="text" class="carKilometers" name="carKilometers">
+            </div>
+
+            <div id="textlabels">
+              <label for="carPrice">Car Price</label>
+              <input type="text" class="carsPrice" name="carPrice">
+            </div>
+
+            <div class="FuelType" id="dropdown">
+              <label for="carFuelType">Car Fuel Type</label>
+              <select class="carFuelType" name="carFuelType">
+                <option value="" disabled select>Select Fuel Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="EV">EV</option>
+              </select>
+            </div>
+
+
+            <div class="Transmission" id="dropdown">
+              <label for="carTransmission">Transmission Type</label>
+              <select class="carTransmission" name="carTransmission">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+              </select>
+            </div>
+
+
+            <div class="CarBodyType" id="dropdown">
+
+              <label for="carBodyType">Car Body Type</label>
+              <select class="carBodyType" name="carBodyType">
+                <option value="Hatchback">Hatchback</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="MUV">MUV</option>
+                <option value="Crossover">Crossover</option>
+                <option value="Convertible">Convertible</option>
+                <option value="Super Car">Super Cars</option>
+              </select>
+
+            </div>
+
+
+            <div id="textlabels">
+              <label for="carEngineCapacity">Engine Capacity</label>
+              <input type="text" class="carEngineCapacity" name="carEngineCapacity">
+            </div>
+
+
+            <div class="CarSeats" id="dropdown">
+              <label for="carSeats">Car Seats</label>
+              <select class="carSeats" name="carSeats">
+                <option value="2">2</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+              </select>
+            </div>
+        
+              <button type="submit" class="submitBtn" name="add_product">Submit </button>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+
+</body>
+
+</html>

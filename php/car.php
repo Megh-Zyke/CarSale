@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Gabarito&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -14,38 +20,19 @@
             <div class="navbartitle">
                 <h1 class="title"> WheelZ4U </h1>
             </div>
-
-
-            <div class="navbarsearch">
-                <form action="">
-                    <input type="text" name="search" id="search" placeholder="Search">
-                    <button type="submit">Search</button>
-                </form>
+            <div class="Links">
+                <ul>
+                    <li><a href="LandingPage.php">Home</a></li>
+                    <li><a href="buy.php">Buy</a></li>
+                    <li><a href="sellCars.php">Sell</a></li>
+                    <li><a href="cartPage.php">Cart</a></li>
+                </ul>
             </div>
-
-
-
             <div class="navbarLogin">
                 <a href="">Login/Signup</a>
             </div>
         </div>
-
-
-        <!-- links in Navbar -->
-
-
-        <div class="navbarLinks">
-            <div class="Links">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Buy</a></li>
-                    <li><a href="">Sell</a></li>
-                    <li><a href="">Cart</a></li>
-                </ul>
-            </div>
-        </div>
     </div>
-
 
     <!-- car information -->
 
@@ -61,11 +48,19 @@
             <div class="CarImage">
                 <img src="images/<?= $fetch_products['image']; ?>" alt="" class="CarImg">
             </div>
-
+            <h1>Cost of the Car : <?= $fetch_products['carPrice']; ?>     </h1>
+            
+            <form action= "" method="post">
+                <!-- Added method="post" to the form -->
+                <input type="hidden" value="<?= $fetch_products['carID']; ?>" name="carID">
+                <!-- Add other hidden fields if needed -->
+                <input type="submit" value="Like Car 🖤" name="cart" class="SubmitBtn">
+            </form>
+        </div>
+        <div class="carDetails">
             <div class="CarDetails">
                 <h1><?= $fetch_products['carBrand']; ?> <?= $fetch_products['carModel']; ?> </h1>
-                <h3><?= $fetch_products['regno']; ?></h3>
-
+                <h3><?= $fetch_products['regno']; ?>  <?= $fetch_products['carBody']; ?></h3>
                 <ul>
                     <li>Year Manufactured : <?= $fetch_products['carYear']; ?></li>
                     <li>Total Kilometers Driven : <?= $fetch_products['carKM']; ?></li>
@@ -77,23 +72,25 @@
                 </ul>
             </div>
         </div>
-
-        <div class="CarPrice">
-            <h1>Cost of the Car : <?= $fetch_products['carPrice']; ?></h1>
-
-            <form action="cart.php" method="post">
-                <!-- Added method="post" to the form -->
-                <input type="hidden" value="<?= $fetch_products['carID']; ?>" name="carID">
-                <!-- Add other hidden fields if needed -->
-                <input type="submit" value="Add to Cart" name="cart" class="SubmitBtn">
-            </form>
-
-            <div class="consumerDetails">
-                Click here to get Sellers Details
-            </div>
-        </div>
-
     </div>
 </body>
 
 </html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $carID = $_POST['carID'];
+
+    try {
+        include 'connect.php'; // Include the database connection
+
+        $insert_query = $conn->prepare('INSERT INTO wishlist (carID) VALUES (:carID)');
+        $insert_query->bindParam(':carID', $carID, PDO::PARAM_INT);
+        $insert_query->execute();
+
+
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+?>
